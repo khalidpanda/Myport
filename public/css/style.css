@@ -1,0 +1,7 @@
+body {
+background: rgb(176,21,97);
+background: linear-gradient(145deg, rgba(176,21,97,1) 0%, rgba(73,9,59,1) 100%);
+background-repeat: no-repeat;
+background-size: cover;
+height: 100%;
+}
