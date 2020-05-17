@@ -21,3 +21,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/name', 'VisitorsController@name');
 Route::get('/home', 'VisitorsController@name');
 
+//Route::get('ajaxRequest', 'VisitorsController@ajaxRequest');
+
+Route::post('ajaxRequest', 'VisitorsController@store');
+Route::get('downlaod', 'VisitorsController@getDownload');
+
+

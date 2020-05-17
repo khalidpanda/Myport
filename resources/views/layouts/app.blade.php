@@ -4,33 +4,37 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Khalid Rahman</title>
+    <title>{{ config('app.name', 'Khalid') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('/css/font-awesome/css/font-awesome.min.css')}}">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+      <link rel="stylesheet" href="{{asset('/css/font-awesome-4.7.0/css/font-awesome.min.css')}}">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
+    <style>
+   .error{ color:red; } 
+  </style>
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm bb text-white">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    Khalid Rahman
+                <a class="navbar-brand text-white" href="{{ url('/') }}">
+                    Khalid
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -43,36 +47,98 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ml-auto" style="float: right;">
                         <!-- Authentication Links -->
-                     
+                        @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}"></a>
-                            </li>
-                          
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}"></a>
-                                </li>
                             
-                        
+                                    <!-- Button trigger modal -->
+<a class="nav-link text-white" data-toggle="modal" href="#" data-target="#exampleModal">
+Send Message &nbsp;&nbsp;
+</a>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header bb">
+        <h5 class="modal-title text-white" id="exampleModalLabel">This form is going to perform Ajax </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+
+
+
+     <form id="contact_us" method="post" action="javascript:void(0)">
+        <div class="alert alert-success d-none" id="msg_div">
+              <span id="res_message"></span>
+         </div>
+      <div class="form-group">
+        
+        <input type="text" name="name" class="form-control" id="name" placeholder="Please enter name" required="">
+        <span class="text-danger">{{ $errors->first('name') }}</span>
+      </div>
+      <div class="form-group">
+        
+        <input type="text" name="phone" class="form-control" id="phone" placeholder="Please enter mobile number" maxlength="10" required="">
+        <span class="text-danger">{{ $errors->first('phone') }}</span>
+      </div>
+      <div class="form-group">
+        
+        <input type="text" name="email" class="form-control" id="email" placeholder="Please enter email id" required="">
+        <span class="text-danger">{{ $errors->first('email') }}</span>
+      </div>      
+      <div class="form-group">
+        
+        <textarea type="text" name="msg" class="form-control" id="msg" placeholder="Message"></textarea>
+        
+        <span class="text-danger">{{ $errors->first('msg') }}</span>
+      </div>
+      
+      <div class="form-group">
+       <button type="submit" id="send_form" class="btn btn-success ">Submit</button>
+      </div>
+    </form>
+ 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+       
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Modal ends here -->
+                                
+                            </li>
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" href="{{ url('/') }}"><i class="fa fa-hand-peace-o"></i> Bye-Bye</a>
+                                </li>
+                            @endif
+                        @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                     <span class="caret"></span>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                    
+                                        {{ __('Logout') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    
+                                        @csrf
                                     </form>
                                 </div>
                             </li>
-            
+                        @endguest
                     </ul>
                 </div>
             </div>
@@ -82,5 +148,66 @@
             @yield('content')
         </main>
     </div>
+
+
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+
+  <script>
+//-----------------
+$(document).ready(function(){
+$('#send_form').click(function(e){
+   e.preventDefault();
+   /*Ajax Request Header setup*/
+   $.ajaxSetup({
+      headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      }
+  });
+
+   $('#send_form').html('Sending..');
+   
+   /* Submit form data using ajax*/
+   $.ajax({
+      url: "{{ url('ajaxRequest')}}",
+      method: 'post',
+      data: $('#contact_us').serialize(),
+      success: function(response){
+         //------------------------
+            $('#send_form').html('Submit');
+            $('#res_message').show();
+            $('#res_message').html(response.msg);
+            $('#msg_div').removeClass('d-none');
+            if(result.status){
+              $('#res_message').html(result.msg);
+              $('#msg_div').removeClass('alert-danger');
+              $('#msg_div').addClass('alert-success');
+              $('#msg_div').show();
+              $('#res_message').show();
+          }else{
+              $('#res_message').html(result.msg);
+              $('#msg_div').removeClass('alert-success');
+              $('#msg_div').addClass('alert-danger');
+              $('#msg_div').show();
+              $('#res_message').show();
+          }
+
+            document.getElementById("contact_us").reset(); 
+            setTimeout(function(){
+            $('#res_message').hide();
+            $('#msg_div').hide();
+            },10000);
+         //--------------------------
+      }});
+   });
+});
+//-----------------
+</script>
 </body>
+
+
+
+
+
+
 </html>

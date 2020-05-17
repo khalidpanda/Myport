@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Visitor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
+use Validator,Redirect,Response;
 
 class VisitorsController extends Controller
 {
@@ -36,8 +37,23 @@ class VisitorsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'email' => 'required|email',
+            'phone' => 'required|numeric',
+            'msg'  => 'required'
+        ]);
+
+        
+        $arr = array('msg' => 'Please check phone and email and try again!', 'status' => false);
+        if($validator->passes()){ 
+            $validator = $request->all();
+             $result = Visitor::insert($validator);
+            $arr = array('msg' => 'Thanks for contacting!', 'status' => true);
+        }
+        return Response()->json($arr);
     }
+    
 
     /**
      * Display the specified resource.
@@ -93,4 +109,55 @@ class VisitorsController extends Controller
 
 
     }
+
+     public function ajaxRequest()
+
+    {
+
+        return view('ajaxRequest');
+
+    }
+
+     public function ajaxRequestPost(Request $request)
+
+    {
+
+       // $input = request()->all();
+
+        $data = new Visitor;
+        $data->name =$request->input('name');
+        $data->phone =$request->input('phone');
+        $data->email =$request->input('email');
+        $data->msg = $request->input('msg');
+        $data->save();
+
+
+        return response()->json(['success'=>'Got Simple Ajax Request.']);
+
+    }
+
+public function getDownload()
+{
+
+    //PDF file is stored under project/public/download/info.pdf
+
+    $file= public_path(). "/docs/khalid-r.pdf";
+
+ 
+
+$headers = [
+
+              'Content-Type' => 'application/pdf',
+
+           ];
+
+ 
+
+return response()->download($file, 'Resume.pdf', $headers);
+
+}
+
+
+
+
 }
