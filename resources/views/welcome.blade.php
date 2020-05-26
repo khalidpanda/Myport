@@ -7,12 +7,12 @@
         <title>Khalid Rahman</title>
 
         <!-- Fonts -->
-        <link href="{{url('https://fonts.googleapis.com/css?family=Nunito:200,600')}}" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link rel="stylesheet" href="{{asset('/css/font-awesome-4.7.0/css/font-awesome.min.css')}}">
 
-  <link rel="stylesheet" href="{{url('https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css')}}">
-  <script src="{{url('https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')}}"></script>
-  <script src="{{url('https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js')}}"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
         <!-- Styles -->
         <style>
@@ -137,7 +137,7 @@
   Your browser does not support the audio element.
 </audio>
 
-<!--<strong id="demo"></strong>-->
+<strong id="demo"></strong>
 <a class="btn btn-dark btn-lg glow" onclick="playAudio()" ><i class="fa fa-bell fa-lg"  aria-hidden="true"></i></a>
 
                 
