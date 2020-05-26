@@ -137,7 +137,7 @@
   Your browser does not support the audio element.
 </audio>
 
-<strong id="demo"></strong>
+<!--<strong id="demo"></strong>-->
 <a class="btn btn-dark btn-lg glow" onclick="playAudio()" ><i class="fa fa-bell fa-lg"  aria-hidden="true"></i></a>
 
                 
