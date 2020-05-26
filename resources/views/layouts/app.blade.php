@@ -101,7 +101,7 @@ Send Message &nbsp;&nbsp;
       </div>
       
       <div class="form-group">
-       <button type="submit" id="send_form" class="btn btn-success ">Submit</button>
+       <button type="submit" id="send_form" class="btn btn m-color ">Submit</button>
       </div>
     </form>
  

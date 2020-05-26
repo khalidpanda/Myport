@@ -28,14 +28,14 @@
              <div style="margin-left: -20%;">
                <hr>
                <p>Download my resume or check me out on social-media</p>
-              <a class="btn btn m-color" href="{{url('downlaod')}}"><i class="fa fa-download"></i> Resume</a>
-            <a href=""><i class="fa fa-facebook fa-lg text-col"></i></a>
-            <a href=""><i class="fa fa-github fa-lg text-col"></i></a>
-            <a href=""><i class="fa fa-linkedin fa-lg text-col"></i></a>
+              <a class="btn m-color" href="{{url('downlaod')}}"><i class="fa fa-download"></i> <br>Resume</a>
+            <a href="{{url('https://www.facebook.com/shafatahman')}}"style="font-size: 25px;"><i class="fa fa-facebook fa-lg text-col"></i></a>
+            <a href="{{url('https://www.facebook.com/shafatahman')}}"style="font-size: 25px;"><i class="fa fa-github fa-lg text-col"></i></a>
+            <a href="{{url('https://www.facebook.com/shafatahman')}}" style="font-size: 25px;"><i class="fa fa-linkedin fa-lg text-col"></i></a>
              <!--<a href=""><i class="fa fa-whatsapp fa-lg text-col"></i></a>-->
             <hr>
             <div style="justify-content: flex; font-style:none;">
-            <p>You are here beccause you want to see</p>
+            <p>Let me guess why you are here,to see</p>
             <a class="btn btn text-col" data-toggle="modal" data-target="#exampleModal2" style="font-size: 2vw;" href="{{url('https://www.php.net/')}}"><i class="fa fa-briefcase fa-lg text-col"></i><br>Portfolio</a>
             
 <!-- Modal -->
@@ -43,7 +43,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header bb">
-        <h5 class="modal-title text-white" id="exampleModalLabel">Things i have build</h5>
+        <h5 class="modal-title text-white" id="exampleModalLabel">Few showcasing</h5>
         <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -78,6 +78,7 @@
       
     </div><br>
      <div class="w-100"></div>
+     <br>
      <div class="col">
       <div class="card" style="width: 18rem;">
   <img class="card-img-top" src="..." alt="Card image cap">
@@ -103,6 +104,7 @@
       
     </div><br>
      <div class="w-100"></div>
+     <br>
      <div class="col">
       <div class="card" style="width: 18rem;">
   <img class="card-img-top" src="..." alt="Card image cap">
@@ -175,13 +177,15 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Personal Information</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        ...
+        <table>
+          <thead>Data</thead>
+        </table>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
