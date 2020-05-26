@@ -14,14 +14,15 @@
    
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="{{url('https://fonts.googleapis.com/css?family=Nunito')}}" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
      <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+      <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
       <link rel="stylesheet" href="{{asset('/css/font-awesome-4.7.0/css/font-awesome.min.css')}}">
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{url('https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css')}}">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
    <script src="{{ asset('js/app.js') }}" defer></script>
@@ -248,6 +249,12 @@ function showSlides(n) {
   captionText.innerHTML = dots[slideIndex-1].alt;
 }
 </script>
+
+
+ <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="{{url('https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')}}"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{{asset('js/bootstrap.min.js')}}"></script>
 </body>
 
 
