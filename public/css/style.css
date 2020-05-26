@@ -19,3 +19,167 @@ background: linear-gradient(0deg, rgba(1,23,83,1) 0%, rgba(0,128,103,1) 99%);
 	background: rgb(1,23,83);
 background: linear-gradient(0deg, rgba(1,23,83,1) 0%, rgba(128,0,86,1) 99%);
 }
+
+
+.row > .column {
+  padding: 0 8px;
+}
+
+
+
+/* Create four equal columns that floats next to eachother */
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+   background: rgba(0, 0, 0, 0.5);
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 100%;
+
+}
+
+/* The Close Button */
+.close {
+  color: #fff;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 55px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Hide the slides by default */
+.mySlides {
+  
+  width: 50%;
+
+}
+
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Caption text */
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+img.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+
+
+.chat {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .chat li {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px dotted #B3A9A9;
+  }
+
+  .chat li .chat-body p {
+    margin: 0;
+    color: #777777;
+  }
+
+  .p-body {
+    overflow-y: scroll;
+    height: 350px;
+  }
+
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+  }
+
+  ::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #555;
+  }
+
+
+
+  .location,
+  .tempareture {
+
+    height: 30vh;
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .tempareture {
+    flex-direction: column;
+  }
+
+  .temp {
+    display: flex;
+    align-items: center;
+  }
+
+  .m-color {
+     background: rgba(0,128,103,1);
+     color: #fff;
+  }
+
+  .text-col {
+    color: rgba(0,128,103,1);
+  }

@@ -16,7 +16,7 @@ class VisitorsController extends Controller
      */
     public function index()
     {
-        //
+        return view('weather.index');
     }
 
     /**
@@ -153,7 +153,7 @@ $headers = [
 
  
 
-return response()->download($file, 'Resume.pdf', $headers);
+return response()->download($file, 'Khalid_resume.pdf', $headers);
 
 }
 

@@ -17,13 +17,21 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/name', 'VisitorsController@name');
 Route::get('/home', 'VisitorsController@name');
+Route::get('/weather', 'VisitorsController@index');
+
 
 //Route::get('ajaxRequest', 'VisitorsController@ajaxRequest');
 
 Route::post('ajaxRequest', 'VisitorsController@store');
 Route::get('downlaod', 'VisitorsController@getDownload');
 
+
+//Chat app routes start here
+
+//Route::get('/', 'ChatsController@index');
+//Route::get('messages', 'ChatsController@fetchMessages');
+//Route::post('messages', 'ChatsController@sendMessage');
 
